@@ -25,6 +25,8 @@ ChartJS.register(
 );
 
 import { MAX_POINTS, INTERVAL_MS, options } from "~/constants/dashboard/Realtime";
+import { DashboardHeader } from "~/components/dashboard/DashboardHeader";
+import { DashboardCard } from "~/components/dashboard/DashboardCard";
 
 export function meta() {
   return [
@@ -102,26 +104,22 @@ export default function Realtime() {
 
   return (
     <div>
-      <header className="mb-8">
-        <div className="flex items-center gap-3">
-          <h1 className="text-3xl font-black text-gray-900 dark:text-white">
-            Realtime Dashboard
-          </h1>
+      <DashboardHeader
+        title="Realtime Dashboard"
+        description="Live system metrics streaming every second."
+        badge={
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
           </span>
-        </div>
-        <p className="text-gray-500 mt-1">
-          Live system metrics streaming every second.
-        </p>
-      </header>
+        }
+      />
 
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm">
+      <DashboardCard>
         <div className="h-[420px]">
           <Line ref={chartRef} data={createInitialData()} options={options} />
         </div>
-      </div>
+      </DashboardCard>
     </div>
   );
 }

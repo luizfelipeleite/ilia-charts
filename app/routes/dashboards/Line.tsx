@@ -23,6 +23,10 @@ ChartJS.register(
 );
 
 import { data, options, STATS } from "~/constants/dashboard/Line";
+import { DashboardHeader } from "~/components/dashboard/DashboardHeader";
+import { DashboardCard } from "~/components/dashboard/DashboardCard";
+import { StatsGrid } from "~/components/dashboard/StatsGrid";
+import { StatCard } from "~/components/dashboard/StatCard";
 
 export function meta() {
   return [
@@ -34,34 +38,28 @@ export function meta() {
 export default function LineAreaChart() {
   return (
     <div>
-      <header className="mb-8">
-        <h1 className="text-3xl font-black text-gray-900 dark:text-white">
-          Line / Area Chart
-        </h1>
-        <p className="text-gray-500 mt-1">
-          Track trends over time with smooth curves and filled areas.
-        </p>
-      </header>
+      <DashboardHeader
+        title="Line / Area Chart"
+        description="Track trends over time with smooth curves and filled areas."
+      />
 
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm">
+      <DashboardCard>
         <div className="h-[420px]">
           <Line data={data} options={options} />
         </div>
-      </div>
+      </DashboardCard>
 
-      <section className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <StatsGrid>
         {STATS.map((stat) => (
-          <div
+          <StatCard
             key={stat.label}
-            className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5"
-          >
-            <p className="text-sm text-gray-500">{stat.label}</p>
-            <p className={`text-2xl font-bold mt-1 ${stat.accent}`}>
-              {stat.value}
-            </p>
-          </div>
+            label={stat.label}
+            value={stat.value}
+            accent={stat.accent}
+          />
         ))}
-      </section>
+      </StatsGrid>
     </div>
   );
 }
+

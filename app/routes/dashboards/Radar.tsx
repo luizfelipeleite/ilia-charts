@@ -19,6 +19,8 @@ ChartJS.register(
 );
 
 import { DIMENSIONS, data, options } from "~/constants/dashboard/Radar";
+import { DashboardHeader } from "~/components/dashboard/DashboardHeader";
+import { DashboardCard } from "~/components/dashboard/DashboardCard";
 
 export function meta() {
   return [
@@ -30,20 +32,16 @@ export function meta() {
 export default function RadarChart() {
   return (
     <div>
-      <header className="mb-8">
-        <h1 className="text-3xl font-black text-gray-900 dark:text-white">
-          Radar Chart
-        </h1>
-        <p className="text-gray-500 mt-1">
-          Compare multi-dimensional metrics across software quality attributes.
-        </p>
-      </header>
+      <DashboardHeader
+        title="Radar Chart"
+        description="Compare multi-dimensional metrics across software quality attributes."
+      />
 
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 shadow-sm">
+      <DashboardCard>
         <div className="h-[480px] flex items-center justify-center">
           <Radar data={data} options={options} />
         </div>
-      </div>
+      </DashboardCard>
 
       <section className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {DIMENSIONS.map((dim, i) => {
