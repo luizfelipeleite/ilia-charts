@@ -1,4 +1,4 @@
-import { ChartGallery } from "../components/Home/ChartGallery";
+import { ChartGallery } from "../components/home/ChartGallery";
 
 export function meta() {
   return [

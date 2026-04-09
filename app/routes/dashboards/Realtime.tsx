@@ -24,14 +24,14 @@ ChartJS.register(
   Legend,
 );
 
+import { MAX_POINTS, INTERVAL_MS, options } from "~/constants/dashboard/Realtime";
+
 export function meta() {
   return [
     { title: "ília Charts - Realtime Dashboard" },
     { name: "description", content: "Live realtime data streaming visualization" },
   ];
 }
-
-import { MAX_POINTS, INTERVAL_MS, options } from "~/constants/dashboard/Realtime";
 
 function createInitialData(): ChartData<"line"> {
   const labels = Array.from({ length: MAX_POINTS }, (_, i) => `${i}s`);
@@ -61,8 +61,6 @@ function createInitialData(): ChartData<"line"> {
     ],
   };
 }
-
-
 
 export default function Realtime() {
   const chartRef = useRef<ChartJS<"line"> | null>(null);
