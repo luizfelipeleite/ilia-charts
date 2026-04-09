@@ -1,3 +1,5 @@
+import { ChartGallery } from "../components/Home/ChartGallery";
+
 export function meta() {
   return [
     { title: "ília Charts - Home" },
@@ -6,5 +8,9 @@ export function meta() {
 }
 
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <div>
+      <ChartGallery />
+    </div>
+  );
 }
