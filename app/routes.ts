@@ -3,13 +3,17 @@ import {
   index,
   layout,
   route,
+  prefix,
 } from "@react-router/dev/routes";
 
 export default [
-  layout("./components/Layout/Layout.tsx", [
-    index("routes/home.tsx"),
-    route("dashboard", "./routes/dashboard.tsx", [
-      route("realtime", "./routes/realtime.tsx"),
+  layout("./components/layout/Layout.tsx", [
+    index("routes/Home.tsx"),
+    ...prefix("dashboard", [
+      route("bar", "./routes/dashboards/Bar.tsx"),
+      route("line", "./routes/dashboards/Line.tsx"),
+      route("radar", "./routes/dashboards/Radar.tsx"),
+      route("realtime", "./routes/dashboards/Realtime.tsx"),
     ]),
   ]),
 ] satisfies RouteConfig;
