@@ -5,11 +5,11 @@ Technical test developed for ília focused on dashboard creation using Chart.js 
 ## 🚀 Stack
 
 - React 19
-- TypeScript 6
+- TypeScript 5.9
 - Chart.js 4
 - react-chartjs-2 5
 - Vite 8
-- React Router DOM 7
+- React Router 7 Framework mode
 - TailwindCSS 4
 
 ## ⚙️ Getting Started
