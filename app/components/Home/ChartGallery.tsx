@@ -2,7 +2,6 @@ import { Link } from "react-router";
 import { chartItems } from "~/constants/home";
 
 export function ChartGallery() {
-
   return (
     <section>
       <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-2">
