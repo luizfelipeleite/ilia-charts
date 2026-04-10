@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import LogoLink from "./Header/LogoLink";
-import DesktopNav from "./Header/DesktopNav";
-import MobileNav from "./Header/MobileNav";
-import HeaderActions from "./Header/HeaderActions";
+import LogoLink from "./LogoLink";
+import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
+import HeaderActions from "./HeaderActions";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

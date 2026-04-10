@@ -1,7 +1,7 @@
-import BrandColumn from "./Footer/BrandColumn";
-import ChartsColumn from "./Footer/ChartsColumn";
-import TechStackColumn from "./Footer/TechStackColumn";
-import BottomBar from "./Footer/BottomBar";
+import BrandColumn from "./BrandColumn";
+import ChartsColumn from "./ChartsColumn";
+import TechStackColumn from "./TechStackColumn";
+import BottomBar from "./BottomBar";
 
 export default function Footer() {
   return (
