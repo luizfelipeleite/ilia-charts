@@ -1,8 +1,8 @@
-import { ChartGallery } from "../components/home/ChartGallery";
+import { ChartGallery } from "~/components/home/ChartGallery";
 
 export function meta() {
   return [
-    { title: "ília Charts - Home" },
+    { title: "ília Charts - home" },
     { name: "description", content: "ília Charts - data visualization" },
   ];
 }

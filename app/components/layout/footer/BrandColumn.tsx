@@ -1,5 +1,5 @@
 import GithubLink from "~/components/ui/GithubLink";
-import LogoLink from "~/components/layout/Header/LogoLink";
+import LogoLink from "~/components/layout/header/LogoLink";
 
 export default function BrandColumn() {
   return (
